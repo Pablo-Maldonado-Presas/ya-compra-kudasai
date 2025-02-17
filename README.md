@@ -26,10 +26,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes pro
    python -m venv venv
    .\venv\Scripts\activate --Windows
    source venv/bin/activate --macOS/Linux
-3. **Instalar dependencias**:
-   ```cli
-   pip install -r requirements.txt
-4. **Migración y administración de base de datos** (*opcional*):
+3. **Migración y administración de base de datos** (*opcional*):
    - Ejecutar las migraciones de la base de datos para preparar el proyecto con los datos almacenados:
      ```cli
      python manage.py migrate
