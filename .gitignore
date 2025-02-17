@@ -1,0 +1,23 @@
+# Archivos de Python compilados / optimizados / DLL
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Entorno virtual
+venv/
+ENV/
+env/
+.venv/
+*.env
+
+# Carpetas de IDEs / editores
+.vscode/
+.idea/
+
+# Archivos específicos de MacOS
+.DS_Store
+
+# Archivos específicos de Windows
+Thumbs.db
