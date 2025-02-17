@@ -19,33 +19,27 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes pro
 1. **Clonar el repositorio**:
    Abre tu terminal y clona el repositorio:
 
-   ```cmd
+   ```cli
    git clone https://github.com/Pablo-Maldonado-Presas/ya-compra-kudasai.git
-
 2. **Crear y activar un entorno virtual**:
-   ```cmd
+   ```cli
    python -m venv venv
    .\venv\Scripts\activate --Windows
    source venv/bin/activate --macOS/Linux
-
 3. **Instalar dependencias**:
-   ```cmd
+   ```cli
    pip install -r requirements.txt
-
 4. **Migración y administración de base de datos** (*opcional*):
    - Ejecutar las migraciones de la base de datos para preparar el proyecto con los datos almacenados:
-     ```cmd
+     ```cli
      python manage.py migrate
    - Crear un superusuario (para acceder al panel de administración de Django):
-     ```cmd
+     ```cli
      python manage.py createsuperuser
-
-
 ## Ejecución y acceso a la página
 1. **Ejecución**:
-    ```cmd
+    ```cli
     python manage.py runserver
-
 2. **Accesos**:
    - Página: http://127.0.0.1:8000
    - CRUD: http://127.0.0.1:8000/crud
