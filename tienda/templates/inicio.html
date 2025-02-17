@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YaCompra Kudasai</title>
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="{% static 'assets/logo.ico' %}" />
+
+  <!-- Bootstrap 5.3.0-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <!-- Core theme CSS-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+  <!-- Navegación-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(225,225,225, 0.7);">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">YaCompraKudasai</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                </li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                    href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                    href="{% url 'mostrar_productos' %}">Productos</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                    href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+            <!-- API Divisas-->
+            <p id="tipo-cambio"></p>
+            <!-- Carrito de compras-->
+            <div class="text-center">
+                <button id="myBtn">Carrito</button>
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="text-center">
+                        <section class="carrito">
+                            <h2>Carrito de compra</h2>
+                            <ul></ul>
+                            <p>Total: $0</p>
+                            <button>Comprar</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+    
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'img/carrusel1.jpg' %}" alt="Imagen 1" class="d-block w-100">
+            
+            <div class="carousel-caption">
+              <h3><strong>Figuras de animé</strong></h3>
+              <p><strong>¡Lleva tus personajes favoritos a casa!</strong></p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/carrusel2.jpg' %}" alt="Imagen 2" class="d-block w-100">
+            <div class="carousel-caption">
+              <h3><strong>Mangas de colección</strong></h3>
+              <p><strong>¡Completa tu colección con nuestros mangas exclusivos!</strong></p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/carrusel3.jpg' %}" alt="Imagen 3" class="d-block w-100">
+            <div class="carousel-caption">
+              <h3><strong>Peluches adorables</strong></h3>
+              <p><strong>¡Abraza a tus personajes favoritos en forma de peluche!</strong></p>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+  
+
+  <!-- Sección-->
+  <div class="px-4 pt-5 my-5 text-center">
+    <h1 class="display-4 fw-bold text-body-emphasis">\YaCompra Kudasai/</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Tienda online de figuras, mangas y diversos productos importados directamente desde Japón</p>
+    </div>
+    <div class="overflow-hidden">
+      <div class="container px-5">
+        <img src="{% static 'img/logo.png' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="300" height="100%" loading="lazy">
+      </div>
+    </div>
+  </div>
+          
+
+
+  <!-- Footer-->
+  <footer class="py-1">
+    <div class="container"><p class="m-0 text-center text-black">Copyright &copy; YaCompra Kudasai 2023</p></div>
+  </footer>
+    
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  
+  <!-- JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Core theme JS-->
+  <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
