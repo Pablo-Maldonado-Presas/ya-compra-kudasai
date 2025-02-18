@@ -17,16 +17,30 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes pro
 
 ## Instalación
 1. **Clonar el repositorio**:
-   Abre tu terminal y clona el repositorio:
-
+   
+   **Abre tu terminal y clona el repositorio**
    ```cli
    git clone https://github.com/Pablo-Maldonado-Presas/ya-compra-kudasai.git
-2. **Crear y activar un entorno virtual**:
+3. **Configuración en Windows *(Opcional, si hay restricciones de ejecución)***:
+   
+   Abrir PowerShell en modo administrador y ejecutar:
+   ```cli
+   Set-ExecutionPolicy Unrestricted
+5. **Crear y activar un entorno virtual**:
+
+   **Crear**
    ```cli
    python -m venv venv
-   .\venv\Scripts\activate --Windows
-   source venv/bin/activate --macOS/Linux
-3. **Migración y administración de base de datos** (*opcional*):
+   ```
+   Activar (*Windows*)
+   ```cli
+   .\venv\Scripts\activate
+   ```
+   Activar (*macOS/Linux*)
+   ```cli
+   source venv/bin/activate 
+   ```
+6. **Migración y administración de base de datos** (*opcional*):
    - Ejecutar las migraciones de la base de datos para preparar el proyecto con los datos almacenados:
      ```cli
      python manage.py migrate
