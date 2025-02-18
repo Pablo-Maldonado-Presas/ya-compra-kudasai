@@ -56,3 +56,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes pro
    - CRUD: http://127.0.0.1:8000/crud
      - Username: supervisor | Password: otakusftw
    - Interfaz de administración http://127.0.0.1:8000/admin
+  
+---
+## Galería de capturas
+Para ver capturas de pantalla de la aplicación, visita la [galería de imágenes](https://pablo-maldonado-presas.github.io/ya-compra-kudasai/gallery/).
